@@ -1,0 +1,22 @@
+<!--
+    Este componente es para mencionar a un usuario de cohost, creando un enlace a su perfil de cohost @ cohost.com/username.
+    Para usarlo, se debe pasar el nombre de usuario del usuario a mencionar como una propiedad del componente.
+
+    Ejemplo:
+    <CohostMention username="username" />
+
+    Este ejemplo crea un enlace a cohost.com/username con el texto "@username".
+ -->
+
+---
+import IconText from '../components/IconText.astro';
+const { username } = Astro.props;
+---
+
+<IconText 
+    linkURL={`https://cohost.org/${username}`}
+    icon="/src/images/eggbug logo por @nex3 en cohost.svg"
+    iconAlt="Social icon for Cohost" 
+    text={`@${username}`
+
+}/>

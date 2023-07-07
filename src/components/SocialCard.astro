@@ -1,0 +1,38 @@
+---
+const { name, url, icon } = Astro.props;
+---
+
+<a href={url}>
+<li class="social-card">
+    <img src={icon} class="icon" />
+    <span>{name}</a>
+</li>
+</a>
+
+<style>
+    span {
+        color: #474350;
+        text-decoration: none;
+        padding-top: 0.5rem;
+    }
+
+    .social-card {
+        display: flex;
+        align-items: center;
+        flex-direction: column;
+        margin: 0 1rem;
+        background-color: #FAFAC6;
+        border-radius: 0.5rem;
+        padding: 1.2rem;
+        cursor: pointer;
+    }
+
+    a:hover {
+        background-color: inherit;
+    }
+
+    .icon {
+        width: 3rem;
+        height: 3rem;
+    }
+</style>

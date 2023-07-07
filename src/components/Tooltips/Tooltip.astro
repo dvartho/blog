@@ -1,0 +1,65 @@
+<!--
+    Este componente es un bloque de construcción para crear un tooltip usando un mensaje 
+    en el tooltip, un url, y el icono que se mostrará en el tooltip.
+ -->
+---
+const { message, url, icon } = Astro.props;
+---
+<a href={url} class="tooltip">
+<slot />
+<span class="tooltiptext">
+    <img src={icon} class="icon" />
+    {message}
+</span>
+</a>
+
+<style>
+  .tooltip {
+    position: relative;
+    display: inline-block;
+    text-decoration: underline;
+		text-decoration-style: wavy;
+		text-underline-offset: 0.25rem; // Para evitar que el subrayado se solape con la descender de las letras
+  }
+  
+  .tooltip .tooltiptext {
+    visibility: hidden;
+    width: 16em;
+    background-color: #FAFAC6;
+    color: rgb(131, 37, 79);
+    text-align: center;
+    border-radius: 6px;
+    padding: 5px 0;
+    position: absolute;
+    z-index: 1;
+    bottom: 150%;
+    left: 50%;
+    margin-left: -60px;
+  
+    /* Position the tooltip */
+    position: absolute;
+    z-index: 1;
+  }
+
+  .tooltip .tooltiptext::after {
+    content: "";
+    position: absolute;
+    top: 100%;
+    left: 50%;
+    margin-left: -5px;
+    border-width: 5px;
+    border-style: solid;
+    border-color: #FAFAC6 transparent transparent transparent;
+}
+  
+  .tooltip:hover .tooltiptext {
+    visibility: visible;
+  }
+
+  .icon {
+    width: 2em;
+    height: 2em;
+    margin-right: 0.5em;
+    vertical-align: middle;
+  }
+</style>

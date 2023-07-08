@@ -1,12 +1,14 @@
-import { defineConfig } from 'astro/config';
-import image from "@astrojs/image";
-
+import { defineConfig, sharpImageService } from 'astro/config';
 import mdx from "@astrojs/mdx";
 
 // https://astro.build/config
 export default defineConfig({
   site: 'https://www.dvartho.com',
-  integrations: [image({
-    serviceEntryPoint: '@astrojs/image/sharp'
-  }), mdx()]
+  integrations: [mdx()],
+  experimental: {
+    assets: true,
+  },
+  image: {
+    service: sharpImageService(),
+  },
 });

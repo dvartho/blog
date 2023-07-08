@@ -3,6 +3,7 @@
 -->
 ---
 import Tooltip from './Tooltip.astro';
+import eggbug from '../../assets/images/eggbug por @nex3 en cohost.svg'
 
 import dayjs from 'dayjs';
 import 'dayjs/locale/es';
@@ -11,16 +12,13 @@ import relativeTime from 'dayjs/plugin/relativeTime';
 // time from date
 dayjs.extend(relativeTime)
 
-const { username, postTitle, postDate, postURL, site } = Astro.props;
+const { username, postTitle, postDate, postURL } = Astro.props;
 const timeFromPostDate = dayjs(postDate).locale('es').fromNow();
-
-var siteIcon;
-var tooltipMessage;
 ---
 
 <Tooltip
   url={postURL}
-  icon={`/src/images/eggbug logo por @nex3 en cohost.svg`}
+  icon={eggbug.src}
   message={`"${postTitle}" por ${username} ${timeFromPostDate}`}
 >
 <slot />

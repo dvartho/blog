@@ -10,9 +10,8 @@
     "astro": "astro"
   },
   "dependencies": {
-    "@astrojs/image": "^0.17.2",
     "@astrojs/mdx": "^0.19.7",
-    "astro": "^2.7.4",
+    "astro": "^2.8.0",
     "dayjs": "^1.11.9",
     "sharp": "^0.32.1"
   }

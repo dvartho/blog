@@ -8,8 +8,10 @@ slug: furality-sylva-dj-sets
 tags: ["furality", "sylva"]
 isDraft: true
 ---
+import { Image } from 'astro:assets';
 import CohostMention from '../../../components/CohostMention.astro';
 import CohostTooltip from '../../../components/Tooltips/CohostTooltip.astro';
+import FuralitySylvaPoster from '../../../assets/images/Furality_Sylva_Club_FYNN_Lineup.png'
 
 # furality sylva dj sets
 
@@ -408,4 +410,7 @@ también gracias a <CohostMention username="Dex" /> para <CohostTooltip username
 ## día 5
 
 ## bonus
-![Furality Sylva Club F.Y.N.N. Lineup Poster](/src/images/Furality_Sylva_Club_FYNN_Lineup.png)
+<figure>
+<Image src={FuralitySylvaPoster} alt="Furality Sylva Club F.Y.N.N. Lineup Poster" height="500" />
+<figcaption>Furality Sylva Club F.Y.N.N. Lineup Poster</figcaption>
+</figure>

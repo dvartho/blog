@@ -10,13 +10,13 @@
 
 ---
 import IconText from '../components/IconText.astro';
+import eggbug from '../assets/images/eggbug por @nex3 en cohost.svg'
 const { username } = Astro.props;
 ---
 
 <IconText 
     linkURL={`https://cohost.org/${username}`}
-    icon="/src/images/eggbug logo por @nex3 en cohost.svg"
+    icon={eggbug.src}
     iconAlt="Social icon for Cohost" 
     text={`@${username}`
-
 }/>

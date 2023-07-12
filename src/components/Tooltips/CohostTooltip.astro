@@ -1,5 +1,7 @@
 <!--
   Este componente es un bloque de construcción para crear un tooltip sobre un post social
+
+  <CohostTooltip username="username" postTitle="postTitle" postDate="postDate" postURL="postURL">link</CohostTooltip>
 -->
 ---
 import Tooltip from './Tooltip.astro';
@@ -19,7 +21,7 @@ const timeFromPostDate = dayjs(postDate).locale('es').fromNow();
 <Tooltip
   url={postURL}
   icon={eggbug.src}
-  message={`"${postTitle}" por ${username} ${timeFromPostDate}`}
+  message={`"${postTitle}" por @${username} ${timeFromPostDate}`}
 >
 <slot />
 </Tooltip>

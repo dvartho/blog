@@ -1,14 +1,14 @@
 ---
 import Layout from '../layouts/Layout.astro';
 import CohostMention from '../components/CohostMention.astro';
+import CohostTooltip from '../components/Tooltips/CohostTooltip.astro';
 ---
 
 <Layout title="mil gracias">
 	<main>
 		<h1>mil gracias a estas personas</h1>
         <ul>
-            <li><CohostMention username="nex3" /> para <a href="https://cohost.org/nex3/post/2554-i-went-ahead-and-vec">su eggbug lindo y vectorizado</a></li>
+            <li><CohostMention username="nex3" /> para <CohostTooltip username="nex3" postTitle="I went ahead and vectorized our little guy" postDate="2-16-2022" postURL="https://cohost.org/nex3/post/2554-i-went-ahead-and-vec">su eggbug lindo y vectorizado</CohostTooltip></li>
         </ul>
     </main>
 </Layout>
-

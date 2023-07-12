@@ -1,0 +1,31 @@
+---
+import Layout from '../layouts/Layout.astro';
+import SocialCards from '../components/SocialCards.astro';
+import SocialCard from '../components/SocialCard.astro';
+import eggbug from '../assets/images/eggbug por @nex3 en cohost.svg';
+import twitterLogo from '../assets/images/twitter logo.svg';
+import githubLogo from '../assets/images/github logo.svg';
+---
+
+<Layout title="sobre mí">
+	<main>
+		<h1>sobre mí</h1>
+		<h3>dvartho</h3>
+		<h4>conejito espacial 🌌 // 🐰 he/him</h4>
+		<SocialCards>
+			<SocialCard name="cohost" url="https://cohost.org/dvartho" icon={eggbug.src} />
+			<SocialCard name="twitter" url="https://twitter.org/dvartho" icon={twitterLogo.src}} />
+			<SocialCard name="github" url="https://twitter.org/dvartho" icon={githubLogo.src} />
+		</SocialCards>
+		<p>holisss 😋. soy dvartho, ¡conejito y estudiante de programación! 🐰🐰 vengo del espacio exterior, ¡así que podría sonar un poco raro! no dudes en saludar, me encanta conocer gente nueva 💙💙</p>
+		<h4>películas favoritas</h4>
+		<ol>
+		
+		</ol>
+		
+		<h4>sets de dj favoritos</h4>
+		<ol>
+			<li><a href="https://www.youtube.com/watch?v=8Vw6vnwxspw">Assertive @ Meta Physica: Faith and Trust [2/22/22]</a></li>
+		</ol>
+	</main>
+</Layout>

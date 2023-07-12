@@ -1,14 +1,16 @@
 import { defineConfig, sharpImageService } from 'astro/config';
 import mdx from "@astrojs/mdx";
 
+import react from "@astrojs/react";
+
 // https://astro.build/config
 export default defineConfig({
   site: 'https://www.dvartho.com',
-  integrations: [mdx()],
+  integrations: [mdx(), react()],
   experimental: {
-    assets: true,
+    assets: true
   },
   image: {
-    service: sharpImageService(),
-  },
+    service: sharpImageService()
+  }
 });

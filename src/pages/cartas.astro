@@ -1,11 +1,30 @@
 ---
 import Layout from '../layouts/Layout.astro';
+import { Image } from 'astro:assets';
+import mega98 from '../assets/images/MegaZeraoraexPitchBlack98.jpg';
+import mega114 from '../assets/images/MegaZeraoraexPitchBlack114.jpg';
 ---
 
 <Layout title="cartas favoritas">
-	<main>
-		<h1>cartas favoritas</h1>
-		<img src="src/assets/images/MegaZeraoraexPitchBlack98.jpg">
-		<img src="src/assets/images/MegaZeraoraexPitchBlack114.jpg">
+<main>
+	<h1>cartas favoritas</h1>
+	<div class="cartas-grid">
+		<Image src={mega98} alt="Carta Pokémon Mega Zeraora ex de la colección Pitch Black, número 98" class="carta-img" />
+		<Image src={mega114} alt="Carta Pokémon Mega Zeraora ex de la colección Pitch Black, número 114" class="carta-img" />
+	</div>
 	</main>
 </Layout>
+
+<style>
+.cartas-grid {
+  display: flex;
+  gap: 1rem;
+  flex-wrap: wrap;
+}
+
+.carta-img {
+  max-width: 300px;
+  width: 100%;
+  height: auto;
+}
+</style>

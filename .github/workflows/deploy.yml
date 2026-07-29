@@ -1,8 +1,7 @@
-name: GitHub Pages Astro CI
+name: Deploy to GitHub Pages
 
 on:
   # Activa el workflow cada vez que hay un push a la rama `main`
-  # ¿Estás usando un nombre diferente de rama? Reemplaza `main` con el nombre de tu rama
   push:
     branches: [ main ]
   # Te permite ejecutar este workflow manualmente desde la pestaña Actions en GitHub.
@@ -19,32 +18,20 @@ jobs:
     runs-on: ubuntu-latest
     steps:
       - name: Checkout your repository using git
-        uses: actions/checkout@v3
+        # actions/checkout@v7.0.1
+        uses: actions/checkout@3d3c42e5aac5ba805825da76410c181273ba90b1
       - name: Install, build, and upload your site
-        uses: withastro/action@v0
-        with:
-            path: . # La ubicación de la raíz de tu proyecto de Astro dentro del repositorio. (opcional)
-            # node-version: 16 # La versión específica de Node que debe utilizarse para compilar tu proyecto. Por defecto es la 16. (opcional)
-            package-manager: yarn # El gestor de paquetes de Node que debe instalar las dependencias y compilar tu proyecto. Automáticamente detectadas con base en tu archivo lockfile. (opcional)
-
+        # withastro/action@v6.1.2
+        uses: withastro/action@e84f40bd8d2caa9e768ec82ad30dd81f0b280853
 
   deploy:
     needs: build
-
-    # Grant GITHUB_TOKEN the permissions required to make a Pages deployment
-    permissions:
-      pages: write      # to deploy to Pages
-      id-token: write   # to verify the deployment originates from an appropriate source
-    
-    # Deploy to the github-pages environment
+    runs-on: ubuntu-latest
     environment:
       name: github-pages
       url: ${{ steps.deployment.outputs.page_url }}
-    
-    # Specify runner + deployment step
-    runs-on: ubuntu-latest
     steps:
       - name: Deploy to GitHub Pages
         id: deployment
-        # v5 (pinned to commit SHA)
+        # actions/deploy-pages@v5.0.0
         uses: actions/deploy-pages@cd2ce8fcbc39b97be8ca5fce6e763baed58fa128

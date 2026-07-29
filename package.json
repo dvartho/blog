@@ -21,6 +21,6 @@
     "sharp": "^0.32.1"
   },
   "devDependencies": {
-    "eslint-plugin-mdx": "^2.1.0"
+    "eslint-plugin-mdx": "^3.8.1"
   }
 }
